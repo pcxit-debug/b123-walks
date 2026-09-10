@@ -10,33 +10,150 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as JoinRouteImport } from './routes/join'
+import { Route as SafetyRouteImport } from './routes/safety'
+import { Route as WalksRouteImport } from './routes/walks'
+import { Route as WalksIndexRouteImport } from './routes/walks.index'
+import { Route as WalksSlugRouteImport } from './routes/walks.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JoinRoute = JoinRouteImport.update({
+  id: '/join',
+  path: '/join',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SafetyRoute = SafetyRouteImport.update({
+  id: '/safety',
+  path: '/safety',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WalksRoute = WalksRouteImport.update({
+  id: '/walks',
+  path: '/walks',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WalksIndexRoute = WalksIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => WalksRoute,
+} as any)
+const WalksSlugRoute = WalksSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => WalksRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
+  '/gallery': typeof GalleryRoute
+  '/join': typeof JoinRoute
+  '/safety': typeof SafetyRoute
+  '/walks': typeof WalksRouteWithChildren
+  '/walks/$slug': typeof WalksSlugRoute
+  '/walks/': typeof WalksIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
+  '/gallery': typeof GalleryRoute
+  '/join': typeof JoinRoute
+  '/safety': typeof SafetyRoute
+  '/walks/$slug': typeof WalksSlugRoute
+  '/walks': typeof WalksIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
+  '/gallery': typeof GalleryRoute
+  '/join': typeof JoinRoute
+  '/safety': typeof SafetyRoute
+  '/walks': typeof WalksRouteWithChildren
+  '/walks/$slug': typeof WalksSlugRoute
+  '/walks/': typeof WalksIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/faq'
+    | '/gallery'
+    | '/join'
+    | '/safety'
+    | '/walks'
+    | '/walks/$slug'
+    | '/walks/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/faq'
+    | '/gallery'
+    | '/join'
+    | '/safety'
+    | '/walks/$slug'
+    | '/walks'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/faq'
+    | '/gallery'
+    | '/join'
+    | '/safety'
+    | '/walks'
+    | '/walks/$slug'
+    | '/walks/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ContactRoute: typeof ContactRoute
+  FaqRoute: typeof FaqRoute
+  GalleryRoute: typeof GalleryRoute
+  JoinRoute: typeof JoinRoute
+  SafetyRoute: typeof SafetyRoute
+  WalksRoute: typeof WalksRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +165,93 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/join': {
+      id: '/join'
+      path: '/join'
+      fullPath: '/join'
+      preLoaderRoute: typeof JoinRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/safety': {
+      id: '/safety'
+      path: '/safety'
+      fullPath: '/safety'
+      preLoaderRoute: typeof SafetyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/walks': {
+      id: '/walks'
+      path: '/walks'
+      fullPath: '/walks'
+      preLoaderRoute: typeof WalksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/walks/': {
+      id: '/walks/'
+      path: '/'
+      fullPath: '/walks/'
+      preLoaderRoute: typeof WalksIndexRouteImport
+      parentRoute: typeof WalksRoute
+    }
+    '/walks/$slug': {
+      id: '/walks/$slug'
+      path: '/$slug'
+      fullPath: '/walks/$slug'
+      preLoaderRoute: typeof WalksSlugRouteImport
+      parentRoute: typeof WalksRoute
+    }
   }
 }
 
+interface WalksRouteChildren {
+  WalksSlugRoute: typeof WalksSlugRoute
+  WalksIndexRoute: typeof WalksIndexRoute
+}
+
+const WalksRouteChildren: WalksRouteChildren = {
+  WalksSlugRoute: WalksSlugRoute,
+  WalksIndexRoute: WalksIndexRoute,
+}
+
+const WalksRouteWithChildren = WalksRoute._addFileChildren(WalksRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ContactRoute: ContactRoute,
+  FaqRoute: FaqRoute,
+  GalleryRoute: GalleryRoute,
+  JoinRoute: JoinRoute,
+  SafetyRoute: SafetyRoute,
+  WalksRoute: WalksRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
