@@ -10,33 +10,87 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as JoinRouteImport } from './routes/join'
+import { Route as WalksRouteImport } from './routes/walks'
+import { Route as WalksIndexRouteImport } from './routes/walks.index'
+import { Route as WalksSlugRouteImport } from './routes/walks.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JoinRoute = JoinRouteImport.update({
+  id: '/join',
+  path: '/join',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WalksRoute = WalksRouteImport.update({
+  id: '/walks',
+  path: '/walks',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WalksIndexRoute = WalksIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => WalksRoute,
+} as any)
+const WalksSlugRoute = WalksSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => WalksRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/join': typeof JoinRoute
+  '/walks': typeof WalksRouteWithChildren
+  '/walks/$slug': typeof WalksSlugRoute
+  '/walks/': typeof WalksIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/join': typeof JoinRoute
+  '/walks/$slug': typeof WalksSlugRoute
+  '/walks': typeof WalksIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/join': typeof JoinRoute
+  '/walks': typeof WalksRouteWithChildren
+  '/walks/$slug': typeof WalksSlugRoute
+  '/walks/': typeof WalksIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/about' | '/join' | '/walks' | '/walks/$slug' | '/walks/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/about' | '/join' | '/walks/$slug' | '/walks'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/join'
+    | '/walks'
+    | '/walks/$slug'
+    | '/walks/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  JoinRoute: typeof JoinRoute
+  WalksRoute: typeof WalksRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +102,61 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/join': {
+      id: '/join'
+      path: '/join'
+      fullPath: '/join'
+      preLoaderRoute: typeof JoinRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/walks': {
+      id: '/walks'
+      path: '/walks'
+      fullPath: '/walks'
+      preLoaderRoute: typeof WalksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/walks/': {
+      id: '/walks/'
+      path: '/'
+      fullPath: '/walks/'
+      preLoaderRoute: typeof WalksIndexRouteImport
+      parentRoute: typeof WalksRoute
+    }
+    '/walks/$slug': {
+      id: '/walks/$slug'
+      path: '/$slug'
+      fullPath: '/walks/$slug'
+      preLoaderRoute: typeof WalksSlugRouteImport
+      parentRoute: typeof WalksRoute
+    }
   }
 }
 
+interface WalksRouteChildren {
+  WalksSlugRoute: typeof WalksSlugRoute
+  WalksIndexRoute: typeof WalksIndexRoute
+}
+
+const WalksRouteChildren: WalksRouteChildren = {
+  WalksSlugRoute: WalksSlugRoute,
+  WalksIndexRoute: WalksIndexRoute,
+}
+
+const WalksRouteWithChildren = WalksRoute._addFileChildren(WalksRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  JoinRoute: JoinRoute,
+  WalksRoute: WalksRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
