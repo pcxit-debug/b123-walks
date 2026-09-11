@@ -33,14 +33,14 @@ export function SiteFooter() {
               <Facebook className="size-5" />
             </a>
             <a
-              href="#"
+              href={whatsappCommunityUrl}
               aria-label="B123 Walks WhatsApp Community"
               className="grid size-11 place-items-center rounded-2xl bg-navy-foreground/10 transition-colors hover:bg-navy-foreground/20"
             >
               <MessageCircle className="size-5" />
             </a>
             <a
-              href="#"
+              href={instagramUrl}
               aria-label="B123 Walks on Instagram"
               className="grid size-11 place-items-center rounded-2xl bg-navy-foreground/10 transition-colors hover:bg-navy-foreground/20"
             >
