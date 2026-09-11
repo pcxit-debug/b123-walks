@@ -1,9 +1,10 @@
 import { Link } from "@tanstack/react-router";
 import { Facebook, Instagram, MessageCircle } from "lucide-react";
+import { facebookUrl, instagramUrl, whatsappCommunityUrl } from "@/data/site";
 
 const footerLinks = [
   { to: "/", label: "Home" },
-  { to: "/walks", label: "Upcoming Walks" },
+  { to: "/walks", label: "Our Walks" },
   { to: "/about", label: "About" },
   { to: "/join", label: "Join Us" },
   { to: "/gallery", label: "Gallery" },
