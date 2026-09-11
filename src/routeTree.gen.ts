@@ -18,7 +18,6 @@ import { Route as JoinRouteImport } from './routes/join'
 import { Route as SafetyRouteImport } from './routes/safety'
 import { Route as WalksRouteImport } from './routes/walks'
 import { Route as WalksIndexRouteImport } from './routes/walks.index'
-import { Route as WalksSlugRouteImport } from './routes/walks.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -65,11 +64,6 @@ const WalksIndexRoute = WalksIndexRouteImport.update({
   path: '/',
   getParentRoute: () => WalksRoute,
 } as any)
-const WalksSlugRoute = WalksSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => WalksRoute,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -80,7 +74,6 @@ export interface FileRoutesByFullPath {
   '/join': typeof JoinRoute
   '/safety': typeof SafetyRoute
   '/walks': typeof WalksRouteWithChildren
-  '/walks/$slug': typeof WalksSlugRoute
   '/walks/': typeof WalksIndexRoute
 }
 export interface FileRoutesByTo {
@@ -91,7 +84,6 @@ export interface FileRoutesByTo {
   '/gallery': typeof GalleryRoute
   '/join': typeof JoinRoute
   '/safety': typeof SafetyRoute
-  '/walks/$slug': typeof WalksSlugRoute
   '/walks': typeof WalksIndexRoute
 }
 export interface FileRoutesById {
@@ -104,7 +96,6 @@ export interface FileRoutesById {
   '/join': typeof JoinRoute
   '/safety': typeof SafetyRoute
   '/walks': typeof WalksRouteWithChildren
-  '/walks/$slug': typeof WalksSlugRoute
   '/walks/': typeof WalksIndexRoute
 }
 export interface FileRouteTypes {
@@ -118,7 +109,6 @@ export interface FileRouteTypes {
     | '/join'
     | '/safety'
     | '/walks'
-    | '/walks/$slug'
     | '/walks/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -129,7 +119,6 @@ export interface FileRouteTypes {
     | '/gallery'
     | '/join'
     | '/safety'
-    | '/walks/$slug'
     | '/walks'
   id:
     | '__root__'
@@ -141,7 +130,6 @@ export interface FileRouteTypes {
     | '/join'
     | '/safety'
     | '/walks'
-    | '/walks/$slug'
     | '/walks/'
   fileRoutesById: FileRoutesById
 }
@@ -221,23 +209,14 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WalksIndexRouteImport
       parentRoute: typeof WalksRoute
     }
-    '/walks/$slug': {
-      id: '/walks/$slug'
-      path: '/$slug'
-      fullPath: '/walks/$slug'
-      preLoaderRoute: typeof WalksSlugRouteImport
-      parentRoute: typeof WalksRoute
-    }
   }
 }
 
 interface WalksRouteChildren {
-  WalksSlugRoute: typeof WalksSlugRoute
   WalksIndexRoute: typeof WalksIndexRoute
 }
 
 const WalksRouteChildren: WalksRouteChildren = {
-  WalksSlugRoute: WalksSlugRoute,
   WalksIndexRoute: WalksIndexRoute,
 }
 

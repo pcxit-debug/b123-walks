@@ -1,5 +1,4 @@
-import { Link } from "@tanstack/react-router";
-import { CalendarDays, Clock, MapPin, Route, Signal, User } from "lucide-react";
+import { CalendarDays, MapPin, Route } from "lucide-react";
 import type { Walk } from "@/data/walks";
 
 export function WalkCard({ walk }: { walk: Walk }) {
@@ -23,34 +22,15 @@ export function WalkCard({ walk }: { walk: Walk }) {
         </div>
         <div className="flex min-w-0 items-start gap-2.5">
           <CalendarDays className="mt-0.5 size-4 shrink-0 text-green" />
-          <span className="min-w-0">
-            {walk.date} · {walk.startTime}
-          </span>
-        </div>
-        <div className="flex min-w-0 items-start gap-2.5">
-          <Clock className="mt-0.5 size-4 shrink-0 text-green" />
-          <span className="min-w-0">{walk.duration}</span>
+          <span className="min-w-0">{walk.date}</span>
         </div>
         <div className="flex min-w-0 items-start gap-2.5">
           <Route className="mt-0.5 size-4 shrink-0 text-green" />
-          <span className="min-w-0">Meet: {walk.meetingPoint}</span>
-        </div>
-        <div className="flex min-w-0 items-start gap-2.5">
-          <User className="mt-0.5 size-4 shrink-0 text-green" />
-          <span className="min-w-0">Walk leader: {walk.leader}</span>
+          <span className="min-w-0">{walk.distance}</span>
         </div>
       </dl>
 
       <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{walk.description}</p>
-
-      <Link
-        to="/walks/$slug"
-        params={{ slug: walk.slug }}
-        className="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-5 py-3.5 text-sm font-bold text-primary-foreground transition-opacity hover:opacity-90"
-      >
-        <Signal className="size-4" />
-        View Walk Details
-      </Link>
     </article>
   );
 }

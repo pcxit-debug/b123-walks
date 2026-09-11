@@ -1,22 +1,25 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
+import { MessageCircle } from "lucide-react";
 import { PageHero } from "@/components/page-hero";
 import { WalkCard } from "@/components/walk-card";
 import { walkFilters, walks, type WalkTag } from "@/data/walks";
+import { whatsappCommunityUrl } from "@/data/site";
 
 export const Route = createFileRoute("/walks/")({
   head: () => ({
     meta: [
-      { title: "Upcoming Walks — B123 Walks" },
+      { title: "Our Walks — B123 Walks" },
       {
         name: "description",
         content:
-          "See our upcoming group walks across the Midlands, with distance, difficulty, meeting points and walk leaders. Shorter, longer, weekend and evening walks.",
+          "Browse the group walks we've enjoyed across the Midlands. All upcoming walks are announced in our WhatsApp community.",
       },
-      { property: "og:title", content: "Upcoming Walks — B123 Walks" },
+      { property: "og:title", content: "Our Walks — B123 Walks" },
       {
         property: "og:description",
-        content: "Find your next social walk across the Midlands countryside.",
+        content:
+          "A taste of the countryside walks we enjoy — upcoming walks are announced in our WhatsApp community.",
       },
     ],
   }),
@@ -30,13 +33,32 @@ function WalksPage() {
   return (
     <>
       <PageHero
-        eyebrow="Find a walk"
-        title="Upcoming Walks"
-        intro="Pick something that suits you. Every walk shows the distance, the pace and where we meet — and there's always a friendly face waiting at the start."
+        eyebrow="Our walks"
+        title="Walks We've Enjoyed"
+        intro="Here's a taste of where we've been lately — hills, canals, forests and everything in between. New walks happen all the time."
       />
 
       <div className="container-page py-8 md:py-12">
-        <div className="-mx-5 overflow-x-auto px-5 pb-2">
+        <div className="rounded-3xl bg-navy p-6 text-navy-foreground md:flex md:items-center md:justify-between md:gap-8 md:p-8">
+          <div>
+            <h2 className="text-2xl">Looking for upcoming walks?</h2>
+            <p className="mt-2 max-w-xl text-navy-foreground/80">
+              All our new walks are announced in the B123 Walks WhatsApp community — it's free to
+              join, and you'll be the first to hear about every walk.
+            </p>
+          </div>
+          <a
+            href={whatsappCommunityUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-5 inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-green px-6 py-4 text-base font-bold text-primary-foreground transition-opacity hover:opacity-90 md:mt-0"
+          >
+            <MessageCircle className="size-5" />
+            Join our WhatsApp Community
+          </a>
+        </div>
+
+        <div className="mt-10 -mx-5 overflow-x-auto px-5 pb-2">
           <div className="flex gap-2.5">
             {walkFilters.map((f) => {
               const active = filter === f.id;
@@ -73,7 +95,7 @@ function WalksPage() {
           <div className="mt-6 rounded-3xl border border-border bg-card p-8 text-center">
             <h2 className="text-xl">Nothing in this category just yet</h2>
             <p className="mt-2 text-muted-foreground">
-              Try “All Walks” — there's usually something coming up soon.
+              Try “All Walks” — there's usually something to see there.
             </p>
           </div>
         )}

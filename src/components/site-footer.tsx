@@ -1,9 +1,10 @@
 import { Link } from "@tanstack/react-router";
 import { Facebook, Instagram, MessageCircle } from "lucide-react";
+import { facebookUrl, instagramUrl, whatsappCommunityUrl } from "@/data/site";
 
 const footerLinks = [
   { to: "/", label: "Home" },
-  { to: "/walks", label: "Upcoming Walks" },
+  { to: "/walks", label: "Our Walks" },
   { to: "/about", label: "About" },
   { to: "/join", label: "Join Us" },
   { to: "/gallery", label: "Gallery" },
@@ -25,21 +26,21 @@ export function SiteFooter() {
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <a
-              href="#"
+              href={facebookUrl}
               aria-label="B123 Walks on Facebook"
               className="grid size-11 place-items-center rounded-2xl bg-navy-foreground/10 transition-colors hover:bg-navy-foreground/20"
             >
               <Facebook className="size-5" />
             </a>
             <a
-              href="#"
+              href={whatsappCommunityUrl}
               aria-label="B123 Walks WhatsApp Community"
               className="grid size-11 place-items-center rounded-2xl bg-navy-foreground/10 transition-colors hover:bg-navy-foreground/20"
             >
               <MessageCircle className="size-5" />
             </a>
             <a
-              href="#"
+              href={instagramUrl}
               aria-label="B123 Walks on Instagram"
               className="grid size-11 place-items-center rounded-2xl bg-navy-foreground/10 transition-colors hover:bg-navy-foreground/20"
             >

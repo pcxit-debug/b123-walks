@@ -52,7 +52,8 @@ function JoinPage() {
           </ul>
 
           <p className="mt-8 text-lg leading-relaxed text-foreground/75">
-            Not sure yet? Have a look at our upcoming walks, pick one that suits you and simply
+            Not sure yet? Have a look at the walks we've enjoyed, or join our WhatsApp community
+            where every new walk is announced, pick one that suits you and simply
             turn up. Say hello to the walk leader when you arrive and they'll look after you.
           </p>
         </div>
