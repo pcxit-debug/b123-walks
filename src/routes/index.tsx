@@ -1,7 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Footprints, HeartHandshake, Users, ArrowRight } from "lucide-react";
+import { Footprints, HeartHandshake, Users, ArrowRight, MessageCircle } from "lucide-react";
 import heroImage from "@/assets/hero-walkers.jpg";
 import { walks } from "@/data/walks";
+import { whatsappCommunityUrl } from "@/data/site";
 import { WalkCard } from "@/components/walk-card";
 
 export const Route = createFileRoute("/")({
