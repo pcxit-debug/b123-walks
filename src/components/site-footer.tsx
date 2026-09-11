@@ -26,8 +26,8 @@ export function SiteFooter() {
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <a
-              href="#"
-              href={facebookUrl} aria-label="B123 Walks on Facebook"
+              href={facebookUrl}
+              aria-label="B123 Walks on Facebook"
               className="grid size-11 place-items-center rounded-2xl bg-navy-foreground/10 transition-colors hover:bg-navy-foreground/20"
             >
               <Facebook className="size-5" />
