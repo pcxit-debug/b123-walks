@@ -1,7 +1,7 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { Check } from "lucide-react";
-import { toast } from "sonner";
+import { createFileRoute } from "@tanstack/react-router";
+import { Check, Facebook } from "lucide-react";
 import { PageHero } from "@/components/page-hero";
+import { facebookUrl, whatsappCommunityUrl } from "@/data/site";
 
 export const Route = createFileRoute("/join")({
   head: () => ({
@@ -52,7 +52,7 @@ function JoinPage() {
           </ul>
 
           <p className="mt-8 text-lg leading-relaxed text-foreground/75">
-            Not sure yet? Have a look at the walks we've enjoyed, or join our WhatsApp community
+            Not sure yet? Have a look at the walks we've enjoyed, or join our Facebook group
             where every new walk is announced, pick one that suits you and simply
             turn up. Say hello to the walk leader when you arrive and they'll look after you.
           </p>
@@ -63,28 +63,28 @@ function JoinPage() {
           <p className="mt-3 font-display text-5xl">£15</p>
           <p className="mt-1 text-muted-foreground">per person, per year</p>
 
-          <button
-            type="button"
-            onClick={() =>
-              toast("Membership sign-up coming soon", {
-                description: "We'll connect this button to our membership system shortly.",
-              })
-            }
-            className="mt-7 w-full rounded-full bg-green px-6 py-4 text-base font-bold text-primary-foreground transition-opacity hover:opacity-90"
+          <a
+            href={whatsappCommunityUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-7 flex w-full items-center justify-center rounded-full bg-green px-6 py-4 text-base font-bold text-primary-foreground transition-opacity hover:opacity-90"
           >
             Join B123 Walks
-          </button>
+          </a>
 
-          <Link
-            to="/walks"
-            className="mt-3 block w-full rounded-full border border-border px-6 py-4 text-center text-base font-bold text-foreground transition-colors hover:bg-secondary"
+          <a
+            href={facebookUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-3 flex w-full items-center justify-center gap-2 rounded-full border border-border px-6 py-4 text-center text-base font-bold text-foreground transition-colors hover:bg-secondary"
           >
-            Find a Walk
-          </Link>
+            <Facebook className="size-5" />
+            Facebook Group
+          </a>
 
           <p className="mt-5 text-xs leading-relaxed text-muted-foreground">
-            Payments will be handled by our chosen membership system — this button is ready to be
-            connected whenever you are.
+            Joining takes you to our WhatsApp community — that's where members chat, organise lifts
+            and share walk photos.
           </p>
         </div>
       </div>
