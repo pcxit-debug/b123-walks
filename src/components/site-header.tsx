@@ -4,7 +4,7 @@ import { Menu, X, Footprints } from "lucide-react";
 
 const navLinks = [
   { to: "/", label: "Home" },
-  { to: "/walks", label: "Upcoming Walks" },
+  { to: "/walks", label: "Our Walks" },
   { to: "/about", label: "About" },
   { to: "/gallery", label: "Gallery" },
   { to: "/safety", label: "Walk Safety" },
