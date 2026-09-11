@@ -1,10 +1,9 @@
 /**
  * Shared links for B123 Walks.
  *
- * Replace the "#" values with your real links when you have them.
- * The WhatsApp community link is where all upcoming walks are announced.
+ * Update these values here and they refresh everywhere on the site.
  */
 
-export const whatsappCommunityUrl = "#";
-export const facebookUrl = "#";
+export const whatsappCommunityUrl = "https://chat.whatsapp.com/Gbme5FwuNRoDmkzInLHmRW";
+export const facebookUrl = "https://www.facebook.com/groups/b123walks";
 export const instagramUrl = "#";

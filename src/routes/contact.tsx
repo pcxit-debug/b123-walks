@@ -3,6 +3,7 @@ import { useState, type FormEvent } from "react";
 import { Facebook, Instagram, MessageCircle } from "lucide-react";
 import { toast } from "sonner";
 import { PageHero } from "@/components/page-hero";
+import { facebookUrl, instagramUrl, whatsappCommunityUrl } from "@/data/site";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -24,9 +25,9 @@ export const Route = createFileRoute("/contact")({
 });
 
 const socials = [
-  { icon: Facebook, label: "Facebook", detail: "Follow our page for walk updates", href: "#" },
-  { icon: MessageCircle, label: "WhatsApp Community", detail: "Chat with members day to day", href: "#" },
-  { icon: Instagram, label: "Instagram", detail: "Photos from our latest walks", href: "#" },
+  { icon: Facebook, label: "Facebook Group", detail: "Find walks and updates", href: facebookUrl },
+  { icon: MessageCircle, label: "WhatsApp Community", detail: "Chat with members day to day", href: whatsappCommunityUrl },
+  { icon: Instagram, label: "Instagram", detail: "Photos from our latest walks", href: instagramUrl },
 ];
 
 function ContactPage() {
@@ -108,6 +109,8 @@ function ContactPage() {
             <a
               key={social.label}
               href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex min-w-0 items-center gap-4 rounded-3xl border border-border bg-card p-5 shadow-card transition-colors hover:bg-secondary/60"
             >
               <span className="grid size-11 shrink-0 place-items-center rounded-2xl bg-secondary text-secondary-foreground">
@@ -125,8 +128,8 @@ function ContactPage() {
           <div className="rounded-3xl bg-secondary/70 p-6">
             <h2 className="text-lg">Walk. Talk. Connect.</h2>
             <p className="mt-2 text-sm leading-relaxed text-foreground/75">
-              Add your real social links whenever you're ready and these buttons will take people
-              straight to your pages.
+              The best way to find a walk is through our Facebook group — members post upcoming
+              walks, photos and reminders there.
             </p>
           </div>
         </div>

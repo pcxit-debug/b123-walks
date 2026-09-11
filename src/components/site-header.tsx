@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X, Footprints } from "lucide-react";
+import { whatsappCommunityUrl } from "@/data/site";
 
 const navLinks = [
   { to: "/", label: "Home" },
@@ -43,12 +44,14 @@ export function SiteHeader() {
               {link.label}
             </Link>
           ))}
-          <Link
-            to="/join"
+          <a
+            href={whatsappCommunityUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="ml-2 rounded-full bg-green px-4 py-2.5 text-sm font-bold text-primary-foreground transition-opacity hover:opacity-90"
           >
             Join B123 Walks
-          </Link>
+          </a>
         </nav>
 
         <button
@@ -76,13 +79,15 @@ export function SiteHeader() {
                 {link.label}
               </Link>
             ))}
-            <Link
-              to="/join"
+            <a
+              href={whatsappCommunityUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setOpen(false)}
               className="mt-2 rounded-2xl bg-green px-4 py-4 text-center text-base font-bold text-primary-foreground"
             >
               Join B123 Walks
-            </Link>
+            </a>
           </div>
         </nav>
       )}

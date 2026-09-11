@@ -1,8 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Footprints, HeartHandshake, Users, ArrowRight, MessageCircle } from "lucide-react";
+import { Footprints, HeartHandshake, Users, ArrowRight, Facebook } from "lucide-react";
 import heroImage from "@/assets/hero-walkers.jpg";
 import { walks } from "@/data/walks";
-import { whatsappCommunityUrl } from "@/data/site";
+import { facebookUrl, whatsappCommunityUrl } from "@/data/site";
 import { WalkCard } from "@/components/walk-card";
 
 export const Route = createFileRoute("/")({
@@ -73,20 +73,22 @@ function Index() {
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a
-              href={whatsappCommunityUrl}
+              href={facebookUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-green px-7 py-4 text-base font-bold text-primary-foreground transition-opacity hover:opacity-90"
             >
-              <MessageCircle className="size-5" />
-              Find a Walk on WhatsApp
+              <Facebook className="size-5" />
+              Facebook Group
             </a>
-            <Link
-              to="/join"
+            <a
+              href={whatsappCommunityUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-background px-7 py-4 text-base font-bold text-foreground transition-opacity hover:opacity-90"
             >
               Join B123 Walks
-            </Link>
+            </a>
           </div>
         </div>
       </section>
@@ -129,7 +131,7 @@ function Index() {
               <p className="text-sm font-bold tracking-wide uppercase text-green">Where we've been</p>
               <h2 className="mt-2 text-3xl sm:text-4xl">Recent Walks</h2>
               <p className="mt-3 max-w-xl text-muted-foreground">
-                New walks are announced in our WhatsApp community — these are some we've loved.
+                New walks are announced in our Facebook group — these are some we've loved.
               </p>
             </div>
             <Link
@@ -161,20 +163,22 @@ function Index() {
             person per year.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-            <Link
-              to="/join"
-              className="inline-flex items-center justify-center rounded-full bg-green px-7 py-4 text-base font-bold text-primary-foreground transition-opacity hover:opacity-90"
-            >
-              Join B123 Walks
-            </Link>
             <a
               href={whatsappCommunityUrl}
               target="_blank"
               rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-full bg-green px-7 py-4 text-base font-bold text-primary-foreground transition-opacity hover:opacity-90"
+            >
+              Join B123 Walks
+            </a>
+            <a
+              href={facebookUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-navy-foreground/30 px-7 py-4 text-base font-bold text-navy-foreground transition-colors hover:bg-navy-foreground/10"
             >
-              <MessageCircle className="size-5" />
-              Find a Walk on WhatsApp
+              <Facebook className="size-5" />
+              Facebook Group
             </a>
           </div>
         </div>

@@ -1,10 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { MessageCircle } from "lucide-react";
+import { Facebook } from "lucide-react";
 import { PageHero } from "@/components/page-hero";
 import { WalkCard } from "@/components/walk-card";
 import { walkFilters, walks, type WalkTag } from "@/data/walks";
-import { whatsappCommunityUrl } from "@/data/site";
+import { facebookUrl } from "@/data/site";
 
 export const Route = createFileRoute("/walks/")({
   head: () => ({
@@ -13,13 +13,13 @@ export const Route = createFileRoute("/walks/")({
       {
         name: "description",
         content:
-          "Browse the group walks we've enjoyed across the Midlands. All upcoming walks are announced in our WhatsApp community.",
+          "Browse the group walks we've enjoyed across the Midlands. All upcoming walks are announced in our Facebook group.",
       },
       { property: "og:title", content: "Our Walks — B123 Walks" },
       {
         property: "og:description",
         content:
-          "A taste of the countryside walks we enjoy — upcoming walks are announced in our WhatsApp community.",
+          "A taste of the countryside walks we enjoy — upcoming walks are announced in our Facebook group.",
       },
     ],
   }),
@@ -43,18 +43,18 @@ function WalksPage() {
           <div>
             <h2 className="text-2xl">Looking for upcoming walks?</h2>
             <p className="mt-2 max-w-xl text-navy-foreground/80">
-              All our new walks are announced in the B123 Walks WhatsApp community — it's free to
+              All our new walks are announced in the B123 Walks Facebook group — it's free to
               join, and you'll be the first to hear about every walk.
             </p>
           </div>
           <a
-            href={whatsappCommunityUrl}
+            href={facebookUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="mt-5 inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-green px-6 py-4 text-base font-bold text-primary-foreground transition-opacity hover:opacity-90 md:mt-0"
           >
-            <MessageCircle className="size-5" />
-            Join our WhatsApp Community
+            <Facebook className="size-5" />
+            Join our Facebook Group
           </a>
         </div>
 
