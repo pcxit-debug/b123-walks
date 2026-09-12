@@ -54,6 +54,15 @@ export function SiteFooter() {
             >
               <Instagram className="size-5" />
             </a>
+            <a
+              href={tiktokUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="B123 Walks on TikTok"
+              className="grid size-11 place-items-center rounded-2xl bg-navy-foreground/10 transition-colors hover:bg-navy-foreground/20"
+            >
+              <TikTokIcon className="size-5" />
+            </a>
           </div>
         </div>
 
