@@ -6,4 +6,5 @@
 
 export const whatsappCommunityUrl = "https://chat.whatsapp.com/Gbme5FwuNRoDmkzInLHmRW";
 export const facebookUrl = "https://www.facebook.com/groups/b123walks";
-export const instagramUrl = "#";
+export const instagramUrl = "https://instagram.com/b123walks";
+export const tiktokUrl = "https://www.tiktok.com/@b123.walks";
