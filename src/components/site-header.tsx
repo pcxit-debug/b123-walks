@@ -1,7 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { Menu, X, Footprints } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { whatsappCommunityUrl } from "@/data/site";
+import logoAsset from "@/assets/b123-logo-green.png.asset.json";
 
 const navLinks = [
   { to: "/", label: "Home" },
@@ -20,17 +21,13 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-border/70 bg-background/95 backdrop-blur">
       <div className="container-page grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 py-3">
         <Link to="/" className="flex min-w-0 items-center gap-2.5" onClick={() => setOpen(false)}>
-          <span className="grid size-10 shrink-0 place-items-center rounded-2xl bg-primary text-primary-foreground">
-            <Footprints className="size-5" />
-          </span>
-          <span className="min-w-0">
-            <span className="block truncate font-display text-lg leading-tight font-semibold">
-              B123 Walks
-            </span>
-            <span className="block truncate text-xs text-muted-foreground">
-              Walk. Talk. Connect.
-            </span>
-          </span>
+          <img
+            src={logoAsset.url}
+            alt="B123 Walks"
+            width={160}
+            height={40}
+            className="h-9 w-auto shrink-0"
+          />
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex">
