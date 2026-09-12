@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Facebook, Instagram, MessageCircle } from "lucide-react";
 import { facebookUrl, instagramUrl, tiktokUrl, whatsappCommunityUrl } from "@/data/site";
+import logoAsset from "@/assets/b123-logo-green.png.asset.json";
 
 function TikTokIcon({ className }: { className?: string }) {
   return (
@@ -26,8 +27,16 @@ export function SiteFooter() {
     <footer className="mt-20 bg-navy text-navy-foreground">
       <div className="container-page grid gap-10 py-14 md:grid-cols-[1.1fr_1fr]">
         <div>
-          <h2 className="font-display text-2xl font-semibold">B123 Walks</h2>
-          <p className="mt-1 text-lg text-navy-foreground/80">Walk. Talk. Connect.</p>
+          <div className="inline-flex items-center justify-center rounded-2xl bg-navy-foreground p-2">
+            <img
+              src={logoAsset.url}
+              alt="B123 Walks"
+              width={180}
+              height={45}
+              className="h-9 w-auto"
+            />
+          </div>
+          <p className="mt-3 text-lg text-navy-foreground/80">Walk. Talk. Connect.</p>
           <p className="mt-4 max-w-sm text-sm text-navy-foreground/70">
             A friendly community walking group exploring the West Midlands and surrounding
             countryside. No one left behind.
