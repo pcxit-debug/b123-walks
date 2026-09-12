@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Footprints, HeartHandshake, Users, ArrowRight, Facebook } from "lucide-react";
-import heroImage from "@/assets/hero-walkers.jpg";
+import heroImage from "@/assets/b123-group-photo.jpg.asset.json";
 import { walks } from "@/data/walks";
 import { facebookUrl, whatsappCommunityUrl } from "@/data/site";
 import { WalkCard } from "@/components/walk-card";
@@ -49,10 +49,10 @@ function Index() {
     <>
       <section className="relative isolate">
         <img
-          src={heroImage}
-          alt="A friendly group of walkers on a grassy path through the Midlands countryside at golden hour"
+          src={heroImage.url}
+          alt="A friendly group of B123 Walks members smiling together on a sunny Midlands countryside walk"
           width={1920}
-          height={1200}
+          height={1440}
           className="absolute inset-0 size-full object-cover"
         />
         <div className="hero-overlay absolute inset-0" />
