@@ -27,13 +27,15 @@ export function SiteFooter() {
     <footer className="mt-20 bg-navy text-navy-foreground">
       <div className="container-page grid gap-10 py-14 md:grid-cols-[1.1fr_1fr]">
         <div>
-          <img
-            src={logoAsset.url}
-            alt="B123 Walks"
-            width={180}
-            height={45}
-            className="h-10 w-auto"
-          />
+          <div className="inline-flex items-center justify-center rounded-2xl bg-navy-foreground p-2">
+            <img
+              src={logoAsset.url}
+              alt="B123 Walks"
+              width={180}
+              height={45}
+              className="h-9 w-auto"
+            />
+          </div>
           <p className="mt-3 text-lg text-navy-foreground/80">Walk. Talk. Connect.</p>
           <p className="mt-4 max-w-sm text-sm text-navy-foreground/70">
             A friendly community walking group exploring the West Midlands and surrounding
