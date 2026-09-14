@@ -1,9 +1,8 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { Footprints, HeartHandshake, Users, ArrowRight, Facebook } from "lucide-react";
+import { createFileRoute } from "@tanstack/react-router";
+import { Footprints, HeartHandshake, Users, Facebook } from "lucide-react";
 import heroImage from "@/assets/b123-group-photo.jpg.asset.json";
-import { walks } from "@/data/walks";
 import { facebookUrl, whatsappCommunityUrl } from "@/data/site";
-import { WalkCard } from "@/components/walk-card";
+import { TikTokFeed } from "@/components/tiktok-feed";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -43,8 +42,6 @@ const features = [
 ];
 
 function Index() {
-  const nextWalks = walks.slice(0, 3);
-
   return (
     <>
       <section className="relative isolate">
@@ -126,29 +123,18 @@ function Index() {
 
       <section className="bg-secondary/50 py-16 md:py-20">
         <div className="container-page">
-          <div className="grid grid-cols-[minmax(0,1fr)_auto] items-end gap-4 sm:flex sm:justify-between">
-            <div className="min-w-0">
-              <p className="text-sm font-bold tracking-wide uppercase text-green">Where we've been</p>
-              <h2 className="mt-2 text-3xl sm:text-4xl">Recent Walks</h2>
-              <p className="mt-3 max-w-xl text-muted-foreground">
-                New walks are announced in our Facebook group — these are some we've loved.
-              </p>
-            </div>
-            <Link
-              to="/walks"
-              className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-primary px-5 py-3 text-sm font-bold text-primary-foreground transition-opacity hover:opacity-90"
-            >
-              See all <ArrowRight className="size-4" />
-            </Link>
+          <div className="max-w-xl">
+            <p className="text-sm font-bold tracking-wide uppercase text-green">Where we've been</p>
+            <h2 className="mt-2 text-3xl sm:text-4xl">Recent Walks</h2>
+            <p className="mt-3 text-muted-foreground">
+              Our latest walks, straight from our TikTok. Tap a video to watch.
+            </p>
           </div>
 
-          <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {nextWalks.map((walk) => (
-              <WalkCard key={walk.slug} walk={walk} />
-            ))}
-          </div>
+          <TikTokFeed pageSize={5} />
         </div>
       </section>
+
 
       <section className="container-page py-16 md:py-24">
         <div className="rounded-4xl bg-navy px-6 py-14 text-center text-navy-foreground md:px-16">
