@@ -47,7 +47,7 @@ const faqs = [
   },
   {
     q: "Do I need a map?",
-    a: "The walk leader knows the route, but it's always sensible to carry a printed route or have offline maps saved on your phone.",
+    a: "If you need one, message the walk leader who can send you a link of the intended route.",
   },
   {
     q: "Which apps do you recommend?",
