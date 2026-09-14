@@ -43,7 +43,27 @@ const faqs = [
   },
   {
     q: "What should I bring?",
-    a: "Suitable footwear, appropriate clothing, water and anything recommended for that particular walk.",
+    a: "Waterproof walking shoes or boots with good grip and comfortable socks, layered clothing including a waterproof outer layer, walking trousers rather than denim, at least a litre of water, some snacks, a hat, gloves, sunglasses and sunscreen, a fully charged phone, a few plasters and antiseptic wipes, hand sanitiser and a small rucksack to keep your hands free.",
+  },
+  {
+    q: "Do I need a map?",
+    a: "The walk leader knows the route, but it's always sensible to carry a printed route or have offline maps saved on your phone.",
+  },
+  {
+    q: "Which apps do you recommend?",
+    a: "what3words for pinpointing exact meeting points and getting help if it's ever needed, and Outdooractive for viewing routes, distances, elevation and offline maps. Both are free on iPhone and Android.",
+  },
+  {
+    q: "How does the WhatsApp community work?",
+    a: "There are two main groups plus lots of walk-specific ones. Announcements carries all the key updates and event details, and Newbie Chats is a friendly space for new walkers to ask questions and get to know everyone.",
+  },
+  {
+    q: "What do I get out of walking with you?",
+    a: "Fresh air and beautiful landscapes, better physical fitness and mental wellbeing, new friendships in your local community, well-planned safe routes, and special events including weekends away and camping trips.",
+  },
+  {
+    q: "Am I insured on your walks?",
+    a: "No — insurance cover isn't currently provided, so everyone walks at their own risk. Please choose walks that suit you and let the leader know if you're struggling.",
   },
 ];
 
