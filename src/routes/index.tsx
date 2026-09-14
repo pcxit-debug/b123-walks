@@ -1,9 +1,8 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { Footprints, HeartHandshake, Users, ArrowRight, Facebook } from "lucide-react";
+import { createFileRoute } from "@tanstack/react-router";
+import { Footprints, HeartHandshake, Users, Facebook } from "lucide-react";
 import heroImage from "@/assets/b123-group-photo.jpg.asset.json";
-import { walks } from "@/data/walks";
 import { facebookUrl, whatsappCommunityUrl } from "@/data/site";
-import { WalkCard } from "@/components/walk-card";
+import { TikTokFeed } from "@/components/tiktok-feed";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -43,8 +42,6 @@ const features = [
 ];
 
 function Index() {
-  const nextWalks = walks.slice(0, 3);
-
   return (
     <>
       <section className="relative isolate">
