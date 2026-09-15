@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { whatsappCommunityUrl } from "@/data/site";
-import logoAsset from "@/assets/b123-logo-green.png.asset.json";
+import logoAsset from "@/assets/b123-header-logo.png.asset.json";
 
 const navLinks = [
   { to: "/", label: "Home" },

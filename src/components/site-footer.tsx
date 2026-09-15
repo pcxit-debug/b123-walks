@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Facebook, Instagram, MessageCircle } from "lucide-react";
 import { facebookUrl, instagramUrl, tiktokUrl, whatsappCommunityUrl } from "@/data/site";
-import logoAsset from "@/assets/b123-logo-green.png.asset.json";
+import logoAsset from "@/assets/b123-header-logo.png.asset.json";
 
 function TikTokIcon({ className }: { className?: string }) {
   return (
