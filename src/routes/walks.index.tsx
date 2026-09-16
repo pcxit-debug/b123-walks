@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Brain, Users, Footprints, Compass, HeartHandshake, Facebook, Heart } from "lucide-react";
 import { PageHero } from "@/components/page-hero";
 import { facebookUrl, whatsappCommunityUrl, tiktokUrl } from "@/data/site";
-import communityImage from "@/assets/gallery-social.jpg";
+import communityImage from "@/assets/b123-walkers-group.jpg.asset.json";
 
 export const Route = createFileRoute("/walks/")({
   head: () => ({
