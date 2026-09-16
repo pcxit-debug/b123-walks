@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Brain, Users, Footprints, Compass, HeartHandshake, Facebook, Heart } from "lucide-react";
 import { PageHero } from "@/components/page-hero";
 import { facebookUrl, whatsappCommunityUrl, tiktokUrl } from "@/data/site";
-import communityImage from "@/assets/gallery-social.jpg";
+import communityImage from "@/assets/b123-walkers-group.jpg.asset.json";
 
 export const Route = createFileRoute("/walks/")({
   head: () => ({
@@ -78,8 +78,8 @@ function WalksPage() {
           </div>
 
           <img
-            src={communityImage}
-            alt="B123 Walks members enjoying a tea break together in the Midlands countryside"
+            src={communityImage.url}
+            alt="A friendly group of B123 Walks members with walking poles in the rolling Midlands countryside"
             width={1200}
             height={900}
             loading="lazy"
