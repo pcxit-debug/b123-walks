@@ -212,16 +212,16 @@ function WalksPage() {
             <h2 className="mt-2 text-3xl sm:text-4xl">Where to find upcoming walks</h2>
             <p className="mt-4 text-lg leading-relaxed text-foreground/75">
               We don't keep a fixed calendar on the website. Instead, upcoming walks are announced
-              in our Facebook group and WhatsApp community, so you always hear about them first.
+              in our WhatsApp community, so you always hear about them first.
             </p>
             <ul className="mt-6 space-y-3 text-foreground/80">
               <li className="flex items-start gap-3">
                 <span className="mt-1.5 size-2 shrink-0 rounded-full bg-green" />
-                <span>Facebook group — every new walk is posted here.</span>
+                <span>WhatsApp community — where upcoming walks are announced, plus chat, lifts and last-minute updates.</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="mt-1.5 size-2 shrink-0 rounded-full bg-green" />
-                <span>WhatsApp community — chat, lifts and last-minute updates.</span>
+                <span>Facebook group — sharing our past events and promoting the group.</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="mt-1.5 size-2 shrink-0 rounded-full bg-green" />
