@@ -62,6 +62,10 @@ const faqs = [
     a: "Fresh air and beautiful landscapes, better physical fitness and mental wellbeing, new friendships in your local community, well-planned safe routes, and special events including weekends away and camping trips.",
   },
   {
+    q: "Can I bring my dog?",
+    a: "Well-behaved dogs are welcome, but be aware that some of our walks have stiles, and dogs must be kept on a lead around livestock and along the main roads.",
+  },
+  {
     q: "Am I insured on your walks?",
     a: "No — insurance cover isn't currently provided, so everyone walks at their own risk. Please choose walks that suit you and let the leader know if you're struggling.",
   },
