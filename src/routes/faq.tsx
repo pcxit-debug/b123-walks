@@ -39,7 +39,7 @@ const faqs = [
   },
   {
     q: "How much is membership?",
-    a: "£15 per person per year, with two introductory walks available before joining.",
+    a: "Membership is £15 per person per year, with a one-off £10 admin fee when you first join. Keep your membership going year after year and you'll never pay the admin fee again. Your first two walks are free, so you can try us out before joining.",
   },
   {
     q: "What should I bring?",
