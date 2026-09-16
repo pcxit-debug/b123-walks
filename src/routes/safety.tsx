@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Footprints, CloudRain, Droplets, Sandwich, Megaphone, HandHeart, Leaf } from "lucide-react";
+import { Footprints, CloudRain, Droplets, Sandwich, Megaphone, MessagesSquare, HandHeart, Leaf } from "lucide-react";
 import { PageHero } from "@/components/page-hero";
 
 export const Route = createFileRoute("/safety")({
@@ -46,6 +46,11 @@ const tips = [
     icon: Megaphone,
     title: "Follow the walk leader",
     text: "Your leader knows the route and the conditions — please stick with the group and follow their instructions.",
+  },
+  {
+    icon: MessagesSquare,
+    title: "Just ask",
+    text: "If you're unsure about anything to do with the walks, ask a leader or any of the other regular walkers — everyone will be pleased to assist.",
   },
   {
     icon: HandHeart,
