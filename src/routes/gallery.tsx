@@ -8,6 +8,7 @@ import social from "@/assets/gallery-social.jpg";
 import bridge from "@/assets/gallery-bridge.jpg";
 import fields from "@/assets/gallery-fields.jpg";
 import hero from "@/assets/hero-walkers.jpg";
+import camino from "@/assets/gallery-camino.jpg";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
@@ -52,26 +53,39 @@ function GalleryPage() {
         intro="A few favourite moments from our walks. More photos are added after every outing."
       />
 
-      <div className="container-page grid gap-4 py-12 sm:grid-cols-2 lg:grid-cols-3 md:py-16">
-        {photos.map((photo) => (
-          <figure
-            key={photo.caption + photo.src}
-            className="overflow-hidden rounded-3xl border border-border bg-card shadow-card"
-          >
-            <img
-              src={photo.src}
-              alt={photo.alt}
-              width={1200}
-              height={900}
-              loading="lazy"
-              className="aspect-[4/3] w-full object-cover"
-            />
-            <figcaption className="px-5 py-4 text-sm font-bold text-foreground/80">
-              {photo.caption}
-            </figcaption>
-          </figure>
-        ))}
-      </div>
+      {/* Events — big days out get their own banner. To add an event:
+          drop an image in src/assets, import it above and add an entry. */}
+      <section className="container-page pb-12 md:pb-16">
+        <h2 className="font-heading text-3xl font-semibold text-primary md:text-4xl">
+          Events
+        </h2>
+        <p className="mt-2 max-w-2xl text-foreground/80">
+          Our bigger adventures and special days out.
+        </p>
+
+        <figure className="relative mt-8 overflow-hidden rounded-3xl border border-border shadow-card">
+          <img
+            src={camino}
+            alt="Walkers with backpacks on a sunlit Camino path beside a stone waymarker with a yellow scallop shell and arrow"
+            width={1792}
+            height={768}
+            loading="lazy"
+            className="aspect-[16/9] w-full object-cover sm:aspect-[2/1] md:aspect-[21/8]"
+          />
+          <figcaption className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-primary/85 via-primary/30 to-transparent p-6 md:p-10">
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-accent-warm">
+              B123 Walks Event
+            </span>
+            <span className="mt-1 font-heading text-3xl font-semibold text-white md:text-5xl">
+              The Camino
+            </span>
+            <span className="mt-2 max-w-xl text-sm text-white/90 md:text-base">
+              Our biggest adventure yet — following the yellow arrows together.
+              Photos and stories to come.
+            </span>
+          </figcaption>
+        </figure>
+      </section>
     </>
   );
 }
