@@ -33,7 +33,7 @@ export const Route = createFileRoute("/contact")({
 });
 
 const socials = [
-  { icon: Facebook, label: "Facebook Group", detail: "Find walks and updates", href: facebookUrl },
+  { icon: Facebook, label: "Facebook Group", detail: "Sharing past events and promoting the group", href: facebookUrl },
   { icon: MessageCircle, label: "WhatsApp Community", detail: "Chat with members day to day", href: whatsappCommunityUrl },
   { icon: Instagram, label: "Instagram", detail: "Photos from our latest walks", href: instagramUrl },
   { icon: TikTokIcon, label: "TikTok", detail: "Short videos from our walks", href: tiktokUrl },
