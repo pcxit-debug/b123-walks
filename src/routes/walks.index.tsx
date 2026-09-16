@@ -78,8 +78,8 @@ function WalksPage() {
           </div>
 
           <img
-            src={communityImage}
-            alt="B123 Walks members enjoying a tea break together in the Midlands countryside"
+            src={communityImage.url}
+            alt="A friendly group of B123 Walks members with walking poles in the rolling Midlands countryside"
             width={1200}
             height={900}
             loading="lazy"
