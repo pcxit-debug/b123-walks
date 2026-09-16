@@ -137,8 +137,8 @@ function ContactPage() {
           <div className="rounded-3xl bg-secondary/70 p-6">
             <h2 className="text-lg">Walk. Talk. Connect.</h2>
             <p className="mt-2 text-sm leading-relaxed text-foreground/75">
-              The best way to find a walk is through our Facebook group — members post upcoming
-              walks, photos and reminders there.
+              The best way to connect with us is by joining our WhatsApp community — members
+              share upcoming walks, photos and reminders there.
             </p>
           </div>
         </div>
