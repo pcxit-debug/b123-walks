@@ -53,7 +53,6 @@ const eventPanels = [
   {
     src: camino,
     alt: "Walkers with backpacks on a sunlit Camino path beside a stone waymarker with a yellow scallop shell and arrow",
-    eyebrow: "B123 Walks Event",
     title: "The Camino",
     description: "Our biggest adventure yet — following the yellow arrows together.",
   },
@@ -123,12 +122,7 @@ function GalleryPage() {
                 className="h-full w-full object-cover"
               />
               <figcaption className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-primary/85 via-primary/30 to-transparent p-4 md:p-6">
-                {panel.eyebrow && (
-                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-accent-warm md:text-xs">
-                    {panel.eyebrow}
-                  </span>
-                )}
-                <span className="mt-0.5 font-heading text-xl font-semibold text-white md:text-2xl">
+                <span className="font-heading text-xl font-semibold text-white md:text-2xl">
                   {panel.title}
                 </span>
                 <span className="mt-1 text-xs leading-snug text-white/90 md:text-sm">
