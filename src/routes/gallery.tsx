@@ -49,6 +49,46 @@ const photos = [
   { src: fields, alt: "Green Midlands farmland with a footpath and big cloudy sky", caption: "Midlands countryside" },
 ];
 
+const eventPanels = [
+  {
+    src: camino,
+    alt: "Walkers with backpacks on a sunlit Camino path beside a stone waymarker with a yellow scallop shell and arrow",
+    eyebrow: "B123 Walks Event",
+    title: "The Camino",
+    description: "Our biggest adventure yet — following the yellow arrows together.",
+  },
+  {
+    src: walktypeCountryside,
+    alt: "Walkers on a footpath through rolling green Midlands farmland",
+    title: "Countryside",
+    description: "Green fields, hedgerows and big skies close to home.",
+  },
+  {
+    src: walktypeUrban,
+    alt: "Walkers crossing a canal bridge with the city skyline behind",
+    title: "Urban",
+    description: "City streets, canals and parks — right on our doorstep.",
+  },
+  {
+    src: walktypeHills,
+    alt: "Walkers climbing a grassy ridge with views over the countryside",
+    title: "Hills",
+    description: "Steeper climbs and rewarding views for those who fancy them.",
+  },
+  {
+    src: walktypeLongDistance,
+    alt: "A walker with a backpack following a long-distance trail waymarker",
+    title: "Long Distance",
+    description: "Waymarked trails covered in stages, at our own pace.",
+  },
+  {
+    src: walktypeWeekend,
+    alt: "A group of walkers with weekend bags outside a country inn at sunset",
+    title: "Weekends Away",
+    description: "Weekend trips with great walking and even better company.",
+  },
+];
+
 function GalleryPage() {
   return (
     <>
