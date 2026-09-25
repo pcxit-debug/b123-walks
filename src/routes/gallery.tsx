@@ -9,6 +9,11 @@ import bridge from "@/assets/gallery-bridge.jpg";
 import fields from "@/assets/gallery-fields.jpg";
 import hero from "@/assets/hero-walkers.jpg";
 import camino from "@/assets/gallery-camino.jpg";
+import walktypeCountryside from "@/assets/walktype-countryside.jpg";
+import walktypeUrban from "@/assets/walktype-urban.jpg";
+import walktypeHills from "@/assets/walktype-hills.jpg";
+import walktypeLongDistance from "@/assets/walktype-longdistance.jpg";
+import walktypeWeekend from "@/assets/walktype-weekend.jpg";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
