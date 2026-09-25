@@ -81,7 +81,7 @@ const eventPanels = [
     description: "Waymarked trails covered in stages, at our own pace.",
   },
   {
-    src: walktypeWeekend,
+    src: walktypeWeekend.url,
     alt: "B123 Walks group posing on a grassy hilltop overlooking the sea on a weekend away",
     title: "Weekends Away",
     description: "Weekend trips with great walking and even better company.",
