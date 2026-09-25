@@ -53,7 +53,6 @@ const eventPanels = [
   {
     src: camino,
     alt: "Walkers with backpacks on a sunlit Camino path beside a stone waymarker with a yellow scallop shell and arrow",
-    eyebrow: "B123 Walks Event",
     title: "The Camino",
     description: "Our biggest adventure yet — following the yellow arrows together.",
   },
