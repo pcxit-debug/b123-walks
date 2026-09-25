@@ -9,6 +9,11 @@ import bridge from "@/assets/gallery-bridge.jpg";
 import fields from "@/assets/gallery-fields.jpg";
 import hero from "@/assets/hero-walkers.jpg";
 import camino from "@/assets/gallery-camino.jpg";
+import walktypeCountryside from "@/assets/walktype-countryside.jpg";
+import walktypeUrban from "@/assets/walktype-urban.jpg";
+import walktypeHills from "@/assets/walktype-hills.jpg";
+import walktypeLongDistance from "@/assets/walktype-longdistance.jpg";
+import walktypeWeekend from "@/assets/walktype-weekend.jpg";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
@@ -44,6 +49,46 @@ const photos = [
   { src: fields, alt: "Green Midlands farmland with a footpath and big cloudy sky", caption: "Midlands countryside" },
 ];
 
+const eventPanels = [
+  {
+    src: camino,
+    alt: "Walkers with backpacks on a sunlit Camino path beside a stone waymarker with a yellow scallop shell and arrow",
+    eyebrow: "B123 Walks Event",
+    title: "The Camino",
+    description: "Our biggest adventure yet — following the yellow arrows together.",
+  },
+  {
+    src: walktypeCountryside,
+    alt: "Walkers on a footpath through rolling green Midlands farmland",
+    title: "Countryside",
+    description: "Green fields, hedgerows and big skies close to home.",
+  },
+  {
+    src: walktypeUrban,
+    alt: "Walkers crossing a canal bridge with the city skyline behind",
+    title: "Urban",
+    description: "City streets, canals and parks — right on our doorstep.",
+  },
+  {
+    src: walktypeHills,
+    alt: "Walkers climbing a grassy ridge with views over the countryside",
+    title: "Hills",
+    description: "Steeper climbs and rewarding views for those who fancy them.",
+  },
+  {
+    src: walktypeLongDistance,
+    alt: "A walker with a backpack following a long-distance trail waymarker",
+    title: "Long Distance",
+    description: "Waymarked trails covered in stages, at our own pace.",
+  },
+  {
+    src: walktypeWeekend,
+    alt: "A group of walkers with weekend bags outside a country inn at sunset",
+    title: "Weekends Away",
+    description: "Weekend trips with great walking and even better company.",
+  },
+];
+
 function GalleryPage() {
   return (
     <>
@@ -53,38 +98,46 @@ function GalleryPage() {
         intro="A few favourite moments from our walks. More photos are added after every outing."
       />
 
-      {/* Events — big days out get their own banner. To add an event:
-          drop an image in src/assets, import it above and add an entry. */}
+      {/* Events & walk types — square panels. To add one: drop an image in
+          src/assets, import it above and add an entry. */}
       <section className="container-page pb-12 md:pb-16">
         <h2 className="font-heading text-3xl font-semibold text-primary md:text-4xl">
           Events
         </h2>
         <p className="mt-2 max-w-2xl text-foreground/80">
-          Our bigger adventures and special days out.
+          Our bigger adventures — and the kinds of walking we do.
         </p>
 
-        <figure className="relative mt-8 overflow-hidden rounded-3xl border border-border shadow-card">
-          <img
-            src={camino}
-            alt="Walkers with backpacks on a sunlit Camino path beside a stone waymarker with a yellow scallop shell and arrow"
-            width={1792}
-            height={768}
-            loading="lazy"
-            className="aspect-[16/9] w-full object-cover sm:aspect-[2/1] md:aspect-[21/8]"
-          />
-          <figcaption className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-primary/85 via-primary/30 to-transparent p-6 md:p-10">
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-accent-warm">
-              B123 Walks Event
-            </span>
-            <span className="mt-1 font-heading text-3xl font-semibold text-white md:text-5xl">
-              The Camino
-            </span>
-            <span className="mt-2 max-w-xl text-sm text-white/90 md:text-base">
-              Our biggest adventure yet — following the yellow arrows together.
-              Photos and stories to come.
-            </span>
-          </figcaption>
-        </figure>
+        <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6">
+          {eventPanels.map((panel) => (
+            <figure
+              key={panel.title}
+              className="relative aspect-square overflow-hidden rounded-3xl border border-border shadow-card"
+            >
+              <img
+                src={panel.src}
+                alt={panel.alt}
+                width={1024}
+                height={1024}
+                loading="lazy"
+                className="h-full w-full object-cover"
+              />
+              <figcaption className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-primary/85 via-primary/30 to-transparent p-4 md:p-6">
+                {panel.eyebrow && (
+                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-accent-warm md:text-xs">
+                    {panel.eyebrow}
+                  </span>
+                )}
+                <span className="mt-0.5 font-heading text-xl font-semibold text-white md:text-2xl">
+                  {panel.title}
+                </span>
+                <span className="mt-1 text-xs leading-snug text-white/90 md:text-sm">
+                  {panel.description}
+                </span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
       </section>
     </>
   );
