@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/page-hero";
-import socialImage from "@/assets/gallery-social.jpg";
+import aboutImage from "@/assets/b123-about-group.jpg.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -51,10 +51,10 @@ function AboutPage() {
         </div>
 
         <img
-          src={socialImage}
-          alt="B123 Walks members laughing together during a tea break in the countryside"
-          width={1200}
-          height={900}
+          src={aboutImage.url}
+          alt="B123 Walks members relaxing together on a fallen log in the woods, with one of the group's dogs"
+          width={1600}
+          height={1067}
           loading="lazy"
           className="w-full rounded-4xl object-cover shadow-lift"
         />
