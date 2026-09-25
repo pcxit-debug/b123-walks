@@ -1,9 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState, type FormEvent } from "react";
 import { Facebook, Instagram, MessageCircle } from "lucide-react";
-import { toast } from "sonner";
 import { PageHero } from "@/components/page-hero";
 import { facebookUrl, instagramUrl, tiktokUrl, whatsappCommunityUrl } from "@/data/site";
+import contactSocialImage from "@/assets/contact-social.jpg";
 
 function TikTokIcon({ className }: { className?: string }) {
   return (
@@ -40,20 +39,6 @@ const socials = [
 ];
 
 function ContactPage() {
-  const [sent, setSent] = useState(false);
-
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setSent(true);
-    toast("Thanks for your message", {
-      description: "We'll get back to you as soon as we can.",
-    });
-    event.currentTarget.reset();
-  }
-
-  const fieldClass =
-    "mt-2 w-full rounded-2xl border border-input bg-background px-4 py-3.5 text-base outline-none focus:border-green focus:ring-2 focus:ring-ring/40";
-
   return (
     <>
       <PageHero
