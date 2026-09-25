@@ -48,55 +48,16 @@ function ContactPage() {
       />
 
       <div className="container-page grid gap-10 py-12 md:grid-cols-[1.2fr_1fr] md:py-16">
-        <form onSubmit={handleSubmit} className="rounded-4xl border border-border bg-card p-6 shadow-card md:p-8">
-          <div>
-            <label htmlFor="name" className="text-sm font-bold">
-              Name
-            </label>
-            <input id="name" name="name" required autoComplete="name" className={fieldClass} />
-          </div>
-
-          <div className="mt-5">
-            <label htmlFor="email" className="text-sm font-bold">
-              Email
-            </label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              required
-              autoComplete="email"
-              className={fieldClass}
-            />
-          </div>
-
-          <div className="mt-5">
-            <label htmlFor="phone" className="text-sm font-bold">
-              Phone number <span className="font-normal text-muted-foreground">(optional)</span>
-            </label>
-            <input id="phone" name="phone" type="tel" autoComplete="tel" className={fieldClass} />
-          </div>
-
-          <div className="mt-5">
-            <label htmlFor="message" className="text-sm font-bold">
-              Message
-            </label>
-            <textarea id="message" name="message" rows={5} required className={fieldClass} />
-          </div>
-
-          <button
-            type="submit"
-            className="mt-6 w-full rounded-full bg-green px-6 py-4 text-base font-bold text-primary-foreground transition-opacity hover:opacity-90"
-          >
-            Send Message
-          </button>
-
-          {sent && (
-            <p className="mt-4 text-sm font-semibold text-green">
-              Thanks — your message has been noted. We'll be in touch soon.
-            </p>
-          )}
-        </form>
+        <div className="overflow-hidden rounded-4xl border border-border bg-card shadow-card">
+          <img
+            src={contactSocialImage}
+            alt="Illustration of walkers sharing photos and messages from a countryside walk on their phones"
+            width={1024}
+            height={1280}
+            loading="lazy"
+            className="h-full w-full object-cover"
+          />
+        </div>
 
         <div className="space-y-4">
           {socials.map((social) => (
