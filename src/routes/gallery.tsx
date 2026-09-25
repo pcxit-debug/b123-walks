@@ -100,7 +100,7 @@ function GalleryPage() {
       {/* Events & walk types — square panels. To add one: drop an image in
           src/assets, import it above and add an entry. */}
       <section className="container-page pb-12 md:pb-16">
-        <h2 className="font-heading text-3xl font-semibold text-primary md:text-4xl">
+        <h2 className="text-3xl font-semibold text-primary md:text-4xl">
           Events
         </h2>
         <p className="mt-2 max-w-2xl text-foreground/80">
@@ -122,7 +122,7 @@ function GalleryPage() {
                 className="h-full w-full object-cover"
               />
               <figcaption className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-primary/85 via-primary/30 to-transparent p-4 md:p-6">
-                <span className="font-heading text-xl font-semibold text-white md:text-2xl">
+                <span className="text-xl font-semibold text-white md:text-2xl">
                   {panel.title}
                 </span>
                 <span className="mt-1 text-xs leading-snug text-white/90 md:text-sm">
