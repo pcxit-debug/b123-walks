@@ -16,11 +16,11 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact B123 Walks — Get in Touch" },
-      {
-        name: "description",
-        content:
-          "Get in touch with B123 Walks. Send us a message or find us on Facebook, Instagram and our WhatsApp community.",
-      },
+        {
+          name: "description",
+          content:
+            "Connect with B123 Walks — find us on Facebook, Instagram, TikTok and our WhatsApp community.",
+        },
       { property: "og:title", content: "Contact B123 Walks" },
       {
         property: "og:description",
