@@ -51,7 +51,7 @@ function ContactPage() {
         <div className="overflow-hidden rounded-4xl border border-border bg-card shadow-card">
           <img
             src={contactSocialImage}
-            alt="Illustration of walkers sharing photos and messages from a countryside walk on their phones"
+            alt="Walkers on a countryside walk smiling as they share photos on a phone"
             width={1024}
             height={1280}
             loading="lazy"
