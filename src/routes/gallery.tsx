@@ -13,7 +13,7 @@ import walktypeCountryside from "@/assets/walktype-countryside.jpg";
 import walktypeUrban from "@/assets/walktype-urban.jpg";
 import walktypeHills from "@/assets/walktype-hills.jpg";
 import walktypeLongDistance from "@/assets/walktype-longdistance.jpg";
-import walktypeWeekend from "@/assets/walktype-weekend.jpg";
+import walktypeWeekend from "@/assets/walktype-weekend.jpg.asset.json";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
@@ -82,7 +82,7 @@ const eventPanels = [
   },
   {
     src: walktypeWeekend,
-    alt: "A group of walkers with weekend bags outside a country inn at sunset",
+    alt: "B123 Walks group posing on a grassy hilltop overlooking the sea on a weekend away",
     title: "Weekends Away",
     description: "Weekend trips with great walking and even better company.",
   },
