@@ -48,14 +48,14 @@ function ContactPage() {
       />
 
       <div className="container-page grid gap-10 py-12 md:grid-cols-[1.2fr_1fr] md:py-16">
-        <div className="overflow-hidden rounded-4xl border border-border bg-card shadow-card">
+        <div className="relative aspect-[4/5] overflow-hidden rounded-4xl border border-border bg-card shadow-card md:aspect-auto md:h-[600px]">
           <img
             src={contactSocialImage}
             alt="Walkers on a countryside walk smiling as they share photos on a phone"
             width={1024}
             height={1280}
             loading="lazy"
-            className="h-full w-full object-cover"
+            className="absolute inset-0 h-full w-full object-cover object-center md:static md:h-full md:w-full"
           />
         </div>
 
